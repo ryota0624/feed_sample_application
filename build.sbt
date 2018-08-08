@@ -33,7 +33,7 @@ lazy val webapp = (project in file("modules/webapp"))
   .settings(Seq(
     maintainer in Docker := "Ryota",
     dockerBaseImage in Docker := "dockerfile/java",
-    dockerExposedPorts in Docker := Seq(8080, 8080)
+    dockerExposedPorts := Seq(8080)
   ))
   .settings(libraryDependencies ++= webappDependencies)
 

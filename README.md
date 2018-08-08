@@ -8,3 +8,8 @@
     - webapp: webappモジュール
     - util: scala系共通モジュール
 ```
+
+### docker系
+
+- localPublish -> ローカルにイメージができあがる
+- stage -> dockerfileができあがる
