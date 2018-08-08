@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain.iml" filepath="$PROJECT_DIR$/.idea/modules/domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain-build.iml" filepath="$PROJECT_DIR$/.idea/modules/domain-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/scala.iml" filepath="$PROJECT_DIR$/.idea/modules/scala.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/scala-build.iml" filepath="$PROJECT_DIR$/.idea/modules/scala-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util.iml" filepath="$PROJECT_DIR$/.idea/modules/util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util-build.iml" filepath="$PROJECT_DIR$/.idea/modules/util-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/webapp.iml" filepath="$PROJECT_DIR$/.idea/modules/webapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/webapp-build.iml" filepath="$PROJECT_DIR$/.idea/modules/webapp-build.iml" />
+    </modules>
+  </component>
+</project>
