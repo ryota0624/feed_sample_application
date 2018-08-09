@@ -27,8 +27,11 @@ lazy val util = (project in file("modules/util"))
 lazy val domain = (project in file("modules/domain"))
   .dependsOn(util)
 
-lazy val webapp = (project in file("modules/webapp"))
+lazy val infra = (project in file("modules/infra"))
   .dependsOn(util, domain)
+
+lazy val webapp = (project in file("modules/webapp"))
+  .dependsOn(util, domain, infra)
   .enablePlugins(JavaAppPackaging)
   .settings(Seq(
     maintainer in Docker := "Ryota",

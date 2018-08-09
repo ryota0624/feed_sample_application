@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain.iml" filepath="$PROJECT_DIR$/.idea/modules/domain.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain-build.iml" filepath="$PROJECT_DIR$/.idea/modules/domain-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/infra.iml" filepath="$PROJECT_DIR$/.idea/modules/infra.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/infra-build.iml" filepath="$PROJECT_DIR$/.idea/modules/infra-build.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/scala.iml" filepath="$PROJECT_DIR$/.idea/modules/scala.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/scala-build.iml" filepath="$PROJECT_DIR$/.idea/modules/scala-build.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/util.iml" filepath="$PROJECT_DIR$/.idea/modules/util.iml" />
