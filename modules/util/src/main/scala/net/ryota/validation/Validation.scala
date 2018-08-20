@@ -2,16 +2,16 @@ package net.ryota.validation
 
 import net.ryota.validation.Validation._
 
-class Validation[Failure, Entity](getErrors: Entity => Failures[Failure]) {
+class Validation[Failure, Entity](private val getErrors: Entity => Failures[Failure]) {
   def run(e: Entity): ValidationResult[Failure, Entity] = {
     val errors = getErrors(e)
     if (errors.isEmpty) Right(e)
     else Left(errors)
   }
 
-  def and[F <: Failure](other: Validation[Failure, Entity]): Validation[Failure, Entity] = Validation { (entity: Entity) =>
+  def and[F <: Failure](other: Validation[Failure, Entity]): Validation[Failure, Entity] = new Validation ({ (entity: Entity) =>
     other.getErrors(entity) ++ getErrors(entity)
-  }
+  })
 
 }
 

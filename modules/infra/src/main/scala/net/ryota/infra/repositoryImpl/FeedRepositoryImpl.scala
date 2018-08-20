@@ -2,7 +2,7 @@ package net.ryota.infra.repositoryImpl
 
 import net.ryota.monad.Async
 import net.ryota.serif.domains
-import net.ryota.serif.domains.{Feed, FeedRepository, ID}
+import net.ryota.serif.domains.{Feed, FeedRepository, ID, UsesFeedRepository}
 
 object FeedRepositoryOnMemory extends FeedRepository[Async] {
   private var feedMap: Map[ID[Feed], Feed] = Map.empty
@@ -19,6 +19,6 @@ object FeedRepositoryOnMemory extends FeedRepository[Async] {
   }
 }
 
-trait MixInFeedRepository {
-  val feedRepository: FeedRepository[_] = FeedRepositoryOnMemory
+trait MixInFeedRepository extends UsesFeedRepository[Async] {
+  val feedRepository: FeedRepository[Async] = FeedRepositoryOnMemory
 }

@@ -11,7 +11,7 @@ object Async {
   def apply[R](body: => R): Async[R] = new Async(_ => body)
 }
 
-class Async[R](body: Unit => R) {
+class Async[R](val body: Unit => R) {
   def run(implicit context: ExecutionContext): Future[R] = Future {
     body()
   }
