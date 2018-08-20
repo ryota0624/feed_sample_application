@@ -4,6 +4,7 @@ import akka.actor.ActorSystem
 import akka.event.Logging
 import akka.http.scaladsl.{Http, server}
 import akka.stream.ActorMaterializer
+import net.ryota.app.controllers.FeedListGetController
 import net.ryota.serif.domains.Serif
 
 import scala.concurrent.ExecutionContextExecutor
@@ -48,7 +49,7 @@ object main extends App with Route {
 trait Route {
   import akka.http.scaladsl.server.Directives._
 
-  def routes(log:String => Unit): server.Route = pathSingleSlash {
+  def routes(log:String => Unit): server.Route = FeedListGetController.route ~ pathSingleSlash {
     get {
       log("Access!")
       complete(Serif("Hello").emphasis())
