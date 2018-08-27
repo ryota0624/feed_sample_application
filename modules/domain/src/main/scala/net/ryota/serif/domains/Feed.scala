@@ -8,7 +8,7 @@ import net.ryota.validation.Validation
 final class Feed private[domains](
                                    val id: ID[Feed],
                                    val title: Title,
-                                   val text: Describe,
+                                   val describe: Describe,
                                    val createdAt: ZonedDateTime
                                  ) extends Entity
 
