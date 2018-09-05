@@ -37,13 +37,13 @@ object main extends App with Route {
     }
     actorSystem.terminate()
   }
-//  StdIn.readLine() // let it run until user presses return
-//  binding
-//    .flatMap(_.unbind()) // trigger unbinding from the port
-//    .onComplete { _ =>
-//      logger.info("stop server")
-//      system.terminate()
-//    }
+  StdIn.readLine() // let it run until user presses return
+  binding
+    .flatMap(_.unbind()) // trigger unbinding from the port
+    .onComplete { _ =>
+      logger.info("stop server")
+    actorSystem.terminate()
+    }
 }
 
 trait Route {

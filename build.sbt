@@ -19,7 +19,9 @@ lazy val sharedScalacOptions = Seq(
 
 lazy val webappDependencies = Seq(
   "com.typesafe.akka" %% "akka-http"   % "10.1.3",
-  "com.typesafe.akka" %% "akka-stream" % "2.5.12"
+  "com.typesafe.akka" %% "akka-stream" % "2.5.12",
+  "io.spray" %%  "spray-json" % "1.3.4",
+  "com.typesafe.akka" %% "akka-http-spray-json" % "10.1.4"
 )
 
 lazy val util = (project in file("modules/util"))
