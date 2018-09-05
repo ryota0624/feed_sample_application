@@ -4,7 +4,7 @@ import akka.actor.ActorSystem
 import akka.event.Logging
 import akka.http.scaladsl.{Http, server}
 import akka.stream.ActorMaterializer
-import net.ryota.app.controllers.FeedListGetController
+import net.ryota.app.controllers.{FeedListGetController, FeedPostController}
 import net.ryota.serif.domains.Serif
 
 import scala.concurrent.ExecutionContextExecutor
@@ -41,15 +41,16 @@ object main extends App with Route {
   binding
     .flatMap(_.unbind()) // trigger unbinding from the port
     .onComplete { _ =>
-      logger.info("stop server")
+    logger.info("stop server")
     actorSystem.terminate()
-    }
+  }
 }
 
 trait Route {
+
   import akka.http.scaladsl.server.Directives._
 
-  def routes(log:String => Unit): server.Route = FeedListGetController.route ~ pathSingleSlash {
+  def routes(log: String => Unit): server.Route = FeedPostController.route ~ FeedListGetController.route ~ pathSingleSlash {
     get {
       log("Access!")
       complete(Serif("Hello").emphasis())

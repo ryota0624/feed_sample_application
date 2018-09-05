@@ -67,7 +67,9 @@ object FeedValidationFailureMessage {
 }
 
 
-trait FeedRepository[M[_]] extends Repository[Feed, M]
+trait FeedRepository[M[_]] extends Repository[Feed, M] {
+  def findAll(): M[Seq[Feed]]
+}
 
 trait UsesFeedRepository[F[_]] {
   val feedRepository: FeedRepository[F]

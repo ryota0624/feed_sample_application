@@ -7,23 +7,23 @@ import spray.json.{DefaultJsonProtocol, RootJsonFormat}
 
 import scala.concurrent.ExecutionContext
 
-object FeedPostController extends Directives with MixInAsyncFeedPostUsecase {
-  import FeedPostRequestJSONDtoSupport._
+object FeedPostController extends Directives with MixInAsyncFeedPostUsecase with FeedPostRequestJSONDtoSupport {
+
   implicit val context: ExecutionContext = ExecutionContext.global
   val route: Route = (post & pathPrefix("post")) {
     entity(as[FeedPostRequestJSONDto]) {
-      form => completeEither(feedPostUsecase.call(form.title, form.describe)) { value =>
-        complete("OK")
+      form => completeEither(feedPostUsecase.call(form.title, form.describe)) { async =>
+        complete(async.run.map(_ => form))
       }
     }
   }
 }
 
 case class FeedPostRequestJSONDto(
-                             title: String,
-                             describe: String
-                             )
+                                   title: String,
+                                   describe: String
+                                 )
 
-object FeedPostRequestJSONDtoSupport extends DefaultJsonProtocol with SprayJsonSupport {
+trait FeedPostRequestJSONDtoSupport extends DefaultJsonProtocol with SprayJsonSupport {
   implicit val FeedPostRequestJsonDtoFormat: RootJsonFormat[FeedPostRequestJSONDto] = jsonFormat2(FeedPostRequestJSONDto)
 }

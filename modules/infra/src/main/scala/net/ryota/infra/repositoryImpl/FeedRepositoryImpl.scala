@@ -15,8 +15,17 @@ object FeedRepositoryOnMemory extends FeedRepository[Async] {
   }
 
   override def store(e: Feed): Async[Unit] = Async {
+    println("call FeedRepositoryOnMemory")
+
     feedMap = feedMap + (e.id -> e)
+
+    println(feedMap.size)
   }
+
+  def findAll(): Async[Seq[Feed]] = Async {
+    feedMap.values.toSeq
+  }
+
 }
 
 trait MixInFeedRepository extends UsesFeedRepository[Async] {
