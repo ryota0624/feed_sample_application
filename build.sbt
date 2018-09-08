@@ -33,7 +33,7 @@ lazy val infraDependencies = Seq(
   "com.typesafe.slick" %% "slick" % "3.2.3",
   "com.typesafe.slick" %% "slick-codegen" % "3.2.3",
   "postgresql" % "postgresql" % "9.1-901-1.jdbc4",
-  "org.slf4j" % "slf4j-simple" % "1.6.4" // scalikejdbcが依存している？
+//  "org.slf4j" % "slf4j-simple" % "1.6.4" // scalikejdbcが依存している？
 ) ++ shareDependencies
 
 lazy val util = (project in file("modules/util"))

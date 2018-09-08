@@ -2,7 +2,8 @@
 
 ## TODO
 - slf4jなんやねん
-
+- logback使い方
+- logger作る
 - dockerコンテナにpostgres内臓
 
 
@@ -48,3 +49,6 @@ CREATE TABLE feeds (
 CREATE UNIQUE INDEX feeds_pkey ON feeds(id text_ops);
 
 ```
+
+### LOG
+http://slick.lightbend.com/doc/3.2.0-M1/config.html
