@@ -1,18 +1,17 @@
 package net.ryota.infra
 
-import java.io.File
+import com.typesafe.config.ConfigFactory
 
 object CodeGen extends App {
-  val slickDriver = "slick.jdbc.PostgresProfile"
-  val jdbcDriver = "org.postgresql.Driver"
-  val url = "jdbc:postgresql://localhost/sample_app_development"
+  val dbConfig = ConfigFactory.load().getConfig("database")
+  val slickDriver = dbConfig.getString("slickDriver")
+  val jdbcDriver = dbConfig.getString("jdbcDriver")
+  val url = dbConfig.getString("url")
   val outputDir = "modules/infra/src/main/scala"
-  val pkg = "net/ryota/infra"
-  val user = "postgres"
-  val password = ""
+  val pkg = "net.ryota.infra"
+  val user = dbConfig.getString("user")
+  val password = dbConfig.getString("password")
 
-  val currentDir = new File(".").getAbsoluteFile().getParent()
-  println(currentDir)
   slick.codegen.SourceCodeGenerator.main(
     Array(slickDriver, jdbcDriver, url, outputDir, pkg, user, password))
 }
