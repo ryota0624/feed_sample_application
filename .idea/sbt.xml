@@ -12,6 +12,8 @@
             <option value="$PROJECT_DIR$/modules/domain/project" />
             <option value="$PROJECT_DIR$/modules/infra" />
             <option value="$PROJECT_DIR$/modules/infra/project" />
+            <option value="$PROJECT_DIR$/modules/operation" />
+            <option value="$PROJECT_DIR$/modules/operation/project" />
             <option value="$PROJECT_DIR$/modules/util" />
             <option value="$PROJECT_DIR$/modules/util/project" />
             <option value="$PROJECT_DIR$/modules/webapp" />

@@ -17,7 +17,9 @@ lazy val sharedScalacOptions = Seq(
 )
 
 lazy val shareDependencies = Seq(
-  "com.typesafe" % "config" % "1.3.0"
+  "com.typesafe" % "config" % "1.3.0",
+  "ch.qos.logback" % "logback-classic" % "1.2.3",
+  "com.typesafe.scala-logging" %% "scala-logging" % "3.9.0"
 )
 
 lazy val webappDependencies = Seq(
@@ -42,6 +44,9 @@ lazy val domain = (project in file("modules/domain"))
 lazy val infra = (project in file("modules/infra"))
   .dependsOn(util, domain)
   .settings(libraryDependencies ++= infraDependencies)
+
+lazy val operation =  (project in file("modules/operation"))
+  .dependsOn(infra)
 
 lazy val webapp = (project in file("modules/webapp"))
   .dependsOn(util, domain, infra)

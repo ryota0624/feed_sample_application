@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id="operation" external.linked.project.path="$MODULE_DIR$/../../modules/operation" external.root.project.path="$MODULE_DIR$/../.." external.system.id="SBT" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
+    <output url="file://$MODULE_DIR$/../../modules/operation/target/scala-2.12/classes" />
+    <output-test url="file://$MODULE_DIR$/../../modules/operation/target/scala-2.12/test-classes" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../modules/operation">
+      <sourceFolder url="file://$MODULE_DIR$/../../modules/operation/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../modules/operation/src/main/scala" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../modules/operation/src/main/scala-2.12" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../modules/operation/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../modules/operation/src/test/scala" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../modules/operation/src/test/scala-2.12" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../modules/operation/target/scala-2.12/src_managed/main" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../modules/operation/target/scala-2.12/src_managed/test" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../modules/operation/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../modules/operation/target/scala-2.12/resource_managed/main" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../modules/operation/src/test/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../modules/operation/target/scala-2.12/resource_managed/test" type="java-test-resource" />
+      <excludeFolder url="file://$MODULE_DIR$/../../modules/operation/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="sbt: org.scala-lang:scala-library:2.12.6:jar" level="project" />
+    <orderEntry type="library" name="sbt: ch.qos.logback:logback-core:1.2.3:jar" level="project" />
+    <orderEntry type="library" name="sbt: ch.qos.logback:logback-classic:1.2.3:jar" level="project" />
+    <orderEntry type="module" module-name="infra" exported="" />
+    <orderEntry type="library" name="sbt: com.typesafe:config:1.3.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.typesafe.slick:slick-codegen_2.12:3.2.3:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.typesafe.slick:slick_2.12:3.2.3:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.reactivestreams:reactive-streams:1.0.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.slf4j:slf4j-api:1.7.25:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.slf4j:slf4j-simple:1.6.4:jar" level="project" />
+    <orderEntry type="library" name="sbt: postgresql:postgresql:9.1-901-1.jdbc4:jar" level="project" />
+  </component>
+</module>
