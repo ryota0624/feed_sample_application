@@ -5,7 +5,7 @@ import java.time.ZonedDateTime
 import net.ryota.serif.domains.Feed.{Describe, Title}
 import net.ryota.validation.Validation
 
-final class Feed private[domains](
+final class Feed (
                                    val id: ID[Feed],
                                    val title: Title,
                                    val describe: Describe,
