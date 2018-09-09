@@ -25,6 +25,5 @@ class Async[R](val body: Unit => R) {
     Async {
       result().body()
     }
-
   }
 }
