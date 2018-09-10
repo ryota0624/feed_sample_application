@@ -9,21 +9,24 @@ trait Monad[A] { /*全然モナドじゃないけど*/
 
 object Async {
   def apply[R](body: => R): Async[R] = new Async(_ => body)
+
+  def withCtx[R](body: ExecutionContext => R): Async[R] = new Async[R](body)
+
 }
 
-class Async[R](val body: Unit => R) {
+class Async[R](val body: ExecutionContext => R) {
   def run(implicit context: ExecutionContext): Future[R] = Future {
     body()
   }
 
-  def map[R2](f: R => R2): Async[R2] = Async {
-    body.andThen(f)()
+  def map[R2](f: R => R2): Async[R2] = Async.withCtx { ctx: ExecutionContext =>
+    body.andThen(f)(ctx)
   }
 
   def flatMap[R2](f: R => Async[R2]): Async[R2] = {
     val result = body.andThen(f)
-    Async {
-      result().body()
+    Async.withCtx { ctx =>
+      result(ctx).body(ctx)
     }
   }
 }
